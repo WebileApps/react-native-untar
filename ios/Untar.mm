@@ -3,16 +3,20 @@
 @implementation Untar
 RCT_EXPORT_MODULE()
 
-// Example method
-// See // https://reactnative.dev/docs/native-modules-ios
-RCT_EXPORT_METHOD(multiply:(double)a
-                  b:(double)b
+RCT_EXPORT_METHOD(untar:(NSString *)tarFilePath
+                  destinationPath:(NSString *)destinationPath
                   resolve:(RCTPromiseResolveBlock)resolve
                   reject:(RCTPromiseRejectBlock)reject)
 {
-    NSNumber *result = @(a * b);
-
-    resolve(result);
+    NSError *error;
+    BOOL isExtracted = [[NSFileManager defaultManager] createFilesAndDirectoriesAtPath:destinationPath
+                                                                           withTarPath:tarFilePath
+                                                                                 error:&error
+                                                                              progress:nil];
+    if (error == nil) {
+        return resolve(@(isExtracted));
+    }
+    reject(@"Failed to extract tar", error.localizedDescription, nil);
 }
 
 

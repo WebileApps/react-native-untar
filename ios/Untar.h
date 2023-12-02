@@ -1,4 +1,4 @@
-
+#import "NSFileManager+Tar.h"
 #ifdef RCT_NEW_ARCH_ENABLED
 #import "RNUntarSpec.h"
 

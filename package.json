@@ -1,5 +1,5 @@
 {
-  "name": "react-native-untar",
+  "name": "@webileapps/react-native-untar",
   "version": "0.1.0",
   "description": "Untar files on the device",
   "main": "lib/commonjs/index",
