@@ -1,6 +1,5 @@
 {
   "name": "@webileapps/react-native-untar",
-  "private": false,
   "version": "0.1.0",
   "description": "Untar files on the device",
   "main": "lib/commonjs/index",
@@ -48,6 +47,7 @@
   },
   "homepage": "https://github.com/WebileApps/react-native-untar#readme",
   "publishConfig": {
+    "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
